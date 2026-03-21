@@ -1,0 +1,234 @@
+/* RESTORED AND ENHANCED STYLES */
+
+/* Stats */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: -80px;
+    /* Overlap hero */
+    position: relative;
+    z-index: 20;
+    padding-bottom: 40px;
+}
+
+.stat {
+    background: var(--card-bg);
+    padding: 40px 30px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--card-border);
+    transition: transform 0.3s ease;
+}
+
+.stat:hover {
+    transform: translateY(-10px);
+}
+
+.stat-value {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.stat-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Areas of Expertise */
+.practice-view-all {
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* Testimonials */
+.testimonials {
+    background: linear-gradient(135deg, var(--bg) 0%, var(--card-border) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--card-border);
+    position: relative;
+}
+
+.testimonial::before {
+    content: '"';
+    font-size: 120px;
+    line-height: 1;
+    color: var(--accent);
+    opacity: 0.1;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-family: serif;
+}
+
+.testimonial blockquote {
+    font-size: 18px;
+    font-style: italic;
+    color: var(--text);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 24px;
+}
+
+.testimonial-author strong {
+    display: block;
+    color: var(--text);
+    font-size: 18px;
+}
+
+.testimonial-author span {
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* FAQ */
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.faq-item {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+}
+
+.faq-item h4 {
+    color: var(--accent);
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+/* Attorney Section */
+.attorney-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.attorney-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.attorney-visual-wrapper {
+    position: relative;
+}
+
+.attorney-img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: var(--shadow-xl);
+    transform: rotate(-2deg);
+    transition: transform 0.5s ease;
+    border: 8px solid var(--card-bg);
+}
+
+.attorney-visual-wrapper:hover .attorney-img {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.attorney-bg-pattern {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--accent);
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.checklist {
+    list-style: none;
+    margin-top: 30px;
+}
+
+.checklist li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.checklist li::before {
+    content: '\f00c';
+    /* FontAwesome check */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: var(--accent);
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+/* Contact Grid */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+}
+
+.contact-info-card {
+    background: var(--footer-bg);
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.contact-info-card h2,
+.contact-info-card p,
+.contact-info-card h4 {
+    color: white;
+}
+
+.contact-info-card .muted {
+    color: var(--muted);
+}
+
+@media (max-width: 900px) {
+
+    .attorney-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .stats-grid {
+        margin-top: 40px;
+        padding-bottom: 0;
+    }
+}
