@@ -5,7 +5,7 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="relative bg-primary min-h-[600px] flex items-center bg-cover bg-center" style="background-image: url('{{ asset('images/hero-law.jpg') }}');">
+<section class="relative bg-primary min-h-[600px] flex items-center bg-cover bg-center pt-20" style="background-image: url('{{ asset('images/hero-law.jpg') }}');">
     <div class="absolute inset-0 overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-transparent"></div>
         <!-- Abstract pattern -->
@@ -20,18 +20,18 @@
                 Trusted Legal Representation in Ethiopia
             </div>
             <h1 class="text-5xl md:text-6xl font-serif font-bold text-white leading-tight mb-6">
-                Serious Defense for<br>
-                <span class="text-secondary">Serious Charges</span>
+                {{ __('site.hero_headline') }}<br>
+                <span class="text-secondary">{{ __('site.hero_headline_em') }}</span>
             </h1>
             <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-                We fight for your rights in and out of the courtroom. Compassionate defense for complex family cases, criminal defense, property disputes, and contractual matters.
+                {{ __('site.hero_lead') }}
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
                 <a href="{{ route('appointment.create') }}" class="bg-secondary text-primary px-8 py-4 rounded-full font-bold text-center hover:bg-yellow-400 transition transform hover:scale-105">
-                    Book Free Consultation
+                    {{ __('site.hero_cta_book') }}
                 </a>
                 <a href="{{ route('practice-areas.index') }}" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-center hover:bg-white hover:text-primary transition">
-                    Our Practice Areas
+                    {{ __('site.footer_quick_links') }}
                 </a>
             </div>
             
@@ -54,8 +54,8 @@
 <section class="py-20 bg-white dark:bg-gray-900 transition-colors duration-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-4xl font-serif font-bold text-gray-900 dark:text-white mb-4">Our Practice Areas</h2>
-            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Comprehensive legal services tailored to protect your rights and interests</p>
+            <h2 class="text-4xl font-serif font-bold text-gray-900 dark:text-white mb-4">{{ __('site.practice_title') }}</h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">{{ __('site.practice_sub') }}</p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -224,7 +224,7 @@
             </a>
             <a href="tel:+251911259606" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-primary transition flex items-center justify-center">
                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                Call: +251 911 259 606 / +251 93 130 7475
+                Call: +251 911 259 606
             </a>
         </div>
     </div>

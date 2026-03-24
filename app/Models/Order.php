@@ -11,11 +11,12 @@ class Order extends Model
 
     protected $fillable = [
         'user_id', 'form_id', 'amount', 'status', 'transaction_id',
-        'guest_name', 'guest_email', 'guest_phone'
+        'guest_name', 'guest_email', 'guest_phone', 'download_count', 'downloaded_at'
     ];
 
     protected $casts = [
         'amount' => 'float',
+        'downloaded_at' => 'datetime',
     ];
 
     public function user()

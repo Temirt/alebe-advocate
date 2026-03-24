@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,7 +64,7 @@
     @include('partials.navbar')
 
     <!-- Main Content -->
-    <main class="pt-20">
+    <main class="pt-14">
         @yield('content')
     </main>
 
@@ -73,8 +73,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-white font-serif text-lg font-bold mb-4">Alebe Advocate</h3>
-                    <p class="text-sm mb-4">Providing exceptional legal services in Ethiopia with integrity, expertise, and dedication to our clients.</p>
+                    <h3 class="text-white font-serif text-lg font-bold mb-4">{{ __('site.site_name') }}</h3>
+                    <p class="text-sm mb-4">{{ __('site.footer_about') }}</p>
                     <div class="flex space-x-4">
                         <!-- Social Icons -->
                         <!-- TikTok -->
@@ -99,7 +99,7 @@
                 </div>
                 
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Practice Areas</h4>
+                    <h4 class="text-white font-semibold mb-4">{{ __('site.practice_title') }}</h4>
                     <ul class="space-y-2 text-sm">
                         <li><a href="{{ route('practice-areas.show', 'criminal-defense') }}" class="hover:text-secondary transition">Criminal Defense</a></li>
                         <li><a href="{{ route('practice-areas.show', 'family-inheritance-law') }}" class="hover:text-secondary transition">Family & Inheritance Law</a></li>
@@ -109,7 +109,7 @@
                 </div>
                 
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <h4 class="text-white font-semibold mb-4">{{ __('site.footer_quick_links') }}</h4>
                     <ul class="space-y-2 text-sm">
                         <li><a href="{{ route('about') }}" class="hover:text-secondary transition">About Us</a></li>
                         <li><a href="{{ route('attorneys.index') }}" class="hover:text-secondary transition">Our Attorneys</a></li>
@@ -120,7 +120,7 @@
                 </div>
                 
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Contact Info</h4>
+                    <h4 class="text-white font-semibold mb-4">{{ __('site.contact_title') }}</h4>
                     <ul class="space-y-2 text-sm">
                         <li>Addis Ababa, Ethiopia</li>
                         <li>Phone: +251 911 259 606</li>

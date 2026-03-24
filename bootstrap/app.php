@@ -15,6 +15,7 @@ return Application::configure(basePath: dirname(__DIR__))
             '/checkout/webhook',
             '/chat',
         ]);
+        $middleware->append(\App\Http\Middleware\ForceHttpsAndHsts::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

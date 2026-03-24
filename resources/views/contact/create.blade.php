@@ -55,7 +55,7 @@
                     <div class="rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm">
                         <iframe
                             title="Alebe Advocate Location"
-                            src="https://www.google.com/maps?q=Addis%20Ababa%2C%20Ethiopia&output=embed"
+                            src="https://www.google.com/maps?q=2QGP%2BXW9%20Addis%20Ababa&output=embed"
                             class="w-full h-64"
                             loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>

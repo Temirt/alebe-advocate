@@ -40,10 +40,17 @@
                 </div>
             </div>
             
-            <a href="{{ route('checkout.download', $order->id) }}" class="inline-flex items-center justify-center bg-primary text-white py-4 px-8 rounded-xl font-bold text-lg hover:bg-primary/90 transition shadow-lg w-full sm:w-auto">
-                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                Download Document
-            </a>
+            @if(($order->download_count ?? 0) < 1)
+                <a href="{{ route('checkout.download', $order->id) }}" class="inline-flex items-center justify-center bg-primary text-white py-4 px-8 rounded-xl font-bold text-lg hover:bg-primary/90 transition shadow-lg w-full sm:w-auto">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Download Document
+                </a>
+            @else
+                <div class="inline-flex items-center justify-center bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-300 py-4 px-8 rounded-xl font-bold text-lg w-full sm:w-auto">
+                    Download Used
+                </div>
+                <p class="text-sm text-gray-500 dark:text-gray-400 mt-3">This order allows only one download.</p>
+            @endif
             
             <div class="mt-6">
                 <a href="{{ route('legal-forms.index') }}" class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-white transition">

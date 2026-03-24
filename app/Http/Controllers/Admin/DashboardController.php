@@ -10,6 +10,7 @@ use App\Models\ChatMessage;
 use App\Models\User;
 use App\Models\Order;
 use App\Models\Contact;
+use App\Models\SecurityLog;
 
 class DashboardController extends Controller
 {
@@ -22,6 +23,26 @@ class DashboardController extends Controller
         $usersCount = User::count();
         $ordersCount = Order::count();
 
-        return view('admin.dashboard', compact('formsCount','faqsCount','messagesCount', 'liveChatsCount', 'usersCount', 'ordersCount'));
+        $loginLogs = SecurityLog::whereIn('event_type', ['auth.login', 'auth.failed', 'auth.logout'])
+            ->latest()
+            ->limit(20)
+            ->get();
+
+        $paymentLogs = SecurityLog::where('event_type', 'like', 'payment.%')
+            ->orWhere('event_type', 'like', 'download.%')
+            ->latest()
+            ->limit(20)
+            ->get();
+
+        return view('admin.dashboard', compact(
+            'formsCount',
+            'faqsCount',
+            'messagesCount',
+            'liveChatsCount',
+            'usersCount',
+            'ordersCount',
+            'loginLogs',
+            'paymentLogs'
+        ));
     }
 }

@@ -5,8 +5,7 @@ document.querySelectorAll('[data-bg]').forEach(el => {
 
 // Theme toggle, persistence and logo swap
 document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.getElementById('themeToggle');
-    const icon = toggle && toggle.querySelector('i');
+    const toggles = document.querySelectorAll('[data-theme-toggle]');
     const html = document.documentElement;
     const logo = document.querySelector('.logo');
 
@@ -17,7 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             html.classList.remove('dark');
         }
-        if (icon) icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        toggles.forEach((toggle) => {
+            const icon = toggle.querySelector('i');
+            if (icon) icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        });
         if (logo) {
             const lightSrc = logo.dataset.logoLight;
             const darkSrc = logo.dataset.logoDark;
@@ -30,14 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const saved = localStorage.getItem('theme');
     if (saved) applyTheme(saved);
 
-    if (toggle) {
+    toggles.forEach((toggle) => {
         toggle.addEventListener('click', () => {
             const current = html.dataset.theme === 'dark' ? 'dark' : 'light';
             const next = current === 'dark' ? 'light' : 'dark';
             applyTheme(next);
             localStorage.setItem('theme', next);
         });
-    }
+    });
     // Simple chat widget handlers
     const openChat = document.getElementById('openChat');
     const closeChat = document.getElementById('closeChat');
